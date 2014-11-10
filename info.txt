@@ -16,11 +16,35 @@ rake db:create:all
 rails db -p (see version of psql)
 --> httpstatus.es
 
-  get '/' => 'site#home'
+  get '/' => 'site#home' ----> C ----> V
   get --> HTTP Verb
   '/' --> URI
   'site#home' --> controller (site) --> rails g controller site (generar el controlador site)
   end
+
+MVC MODEL:
+MVC : deal with date, logic application. (ex. calculate de Spanish ID (NIF))
+rails g model Project (creates the model Project ---> object of ruby)
+rake db:migrate --> to create the table defined (projects)
+rails db -p (to see the tables created)
+\dt --> shows the table list of relations
+\d name_of_the_table
+Tables primary key is named id (unique id)
+\q --> exit
+Create column:
+rails g migration description
+After that, in xxxx_desciption.rb:
+  def change
+    add_column :projects, :description, :text
+  end
+Later do:
+rake db:migrate
+
+ActiveRecord:
+ORM included in Ruby on Rails
+Maps Ruby objects to the database --> Classes are mapped to the tables --> Objects are mapped to rows
+In our example:
+Class Project is mappped to table projects --> Projects are mapped into row table
 
 - convencion sobre configuration
 
