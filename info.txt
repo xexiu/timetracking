@@ -1,0 +1,35 @@
+Ruby = Language
+Ruby on Rails = framework extracted from Basecamp
+MVC
+Rails = meta gem (includes all gems)
+
+Project of Basecamp (google basecamp)
+--skip-bundle
+--skip-test-unit
+--database=postgresql
+
+echo "ruby 2.1.4p265" > .ruby-version
+echo "default" > .ruby.gemset
+
+sudo -u postgres createuser sergio -P
+rake db:create:all
+rails db -p (see version of psql)
+--> httpstatus.es
+
+  get '/' => 'site#home'
+  get --> HTTP Verb
+  '/' --> URI
+  'site#home' --> controller (site) --> rails g controller site (generar el controlador site)
+  end
+
+- convencion sobre configuration
+
+NAMING RULES:
+- controller name = views folder name
+- action name = template name
+
+Typos:
+see hidden files: ls -a
+see hidden file with more details: ls -la
+bundle open activerecord
+
